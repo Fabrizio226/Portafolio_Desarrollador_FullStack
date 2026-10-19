@@ -1,0 +1,51 @@
+/* Estilos para Pantallas Pequeñas y Móviles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+  }
+
+  #sobre-mi h1 {
+    font-size: 2rem;
+  }
+
+  #sobre-mi h2 {
+    font-size: 1.2rem;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
