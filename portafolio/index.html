@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Fabrizio Ortiz Mendieta</title>
+  
+  <!-- Hojas de estilo CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+
+  <!-- Encabezado / Barra de Navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">&lt;FabrizioOrtiz /&gt;</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        &#9776;
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#video-sec">Video</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><button id="theme-toggle">🌙 Modo Oscuro</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Presentación Personal -->
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <h1>¡Hola! Soy <span class="highlight">Fabrizio Ortiz Mendieta</span></h1>
+        <h2>Desarrollador Web en formación</h2>
+        <p>
+          Apasionado por la tecnología y la creación de experiencias web funcionales e interactivas. 
+          Actualmente integrando mis conocimientos en HTML, CSS, JavaScript, Git y GitHub en Skillnest.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tecnologías y Habilidades -->
+    <section id="habilidades" class="section">
+      <div class="container">
+        <h2>Tecnologías y Habilidades</h2>
+        <div class="skills-grid">
+          <span class="skill-badge">HTML5</span>
+          <span class="skill-badge">CSS3</span>
+          <span class="skill-badge">JavaScript</span>
+          <span class="skill-badge">Git</span>
+          <span class="skill-badge">GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2>Mis Proyectos</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+          <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-category="javascript">
+            <img src="assets/img/proyecto1.jpg" alt="Captura de Proyecto">
+            <h3>Proyecto Integrador</h3>
+            <p>Aplicación web interactiva desarrollada con HTML, CSS y JavaScript.</p>
+            <div class="tags">
+              <span>HTML</span> <span>CSS</span> <span>JS</span>
+            </div>
+            <div class="card-links">
+              <a href="https://fabrizio226.github.io/portafolio/" target="_blank">Ver Demo</a>
+              <a href="https://github.com/Fabrizio226/portafolio" target="_blank">Ver Código</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Video -->
+    <section id="video-sec" class="section">
+      <div class="container">
+        <h2>Presentación en Video</h2>
+        <div class="video-container">
+          <video controls poster="assets/img/video-poster.jpg">
+            <source src="assets/video/presentacion.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página y Contacto -->
+  <footer id="contacto">
+    <div class="container">
+      <h2>¡Hablemos!</h2>
+      <p>Puedes contactarme directamente a través de mi correo profesional:</p>
+      <a href="mailto:fabrizioortizmendieta6@gmail.com" class="contact-link">📧 fabrizioortizmendieta6@gmail.com</a>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Fabrizio226" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="copyright">&copy; 2026 - Creado por Fabrizio Ortiz Mendieta</p>
+    </div>
+  </footer>
+
+  <!-- Scripts de JavaScript -->
+  <script src="js/tema.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
