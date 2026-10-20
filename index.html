@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Fabrizio Ortiz Mendieta</title>
+  <meta name="description" content="Portafolio de Fabrizio Ortiz Mendieta, desarrollador web en formación. Conoce sus habilidades y proyectos en HTML, CSS y JavaScript.">
+  <meta name="theme-color" content="#0b1020">
   
   <!-- Hojas de estilo CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/responsivo.css">
 </head>
-<body>
+<body class="dark-theme">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- Encabezado / Barra de Navegación -->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegación principal">
       <div class="logo">
-        <a href="#">&lt;FabrizioOrtiz /&gt;</a>
+        <a href="#sobre-mi">Fabrizio Ortiz</a>
       </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">
         &#9776;
       </button>
       <ul class="nav-menu" id="nav-menu">
@@ -27,58 +30,114 @@
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#video-sec">Video</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><button id="theme-toggle">🌙 Modo Oscuro</button></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="contenido">
     <!-- Presentación Personal -->
-    <section id="sobre-mi" class="section">
+    <section id="sobre-mi" class="section" aria-labelledby="presentacion-titulo">
       <div class="container">
-        <h1>¡Hola! Soy <span class="highlight">Fabrizio Ortiz Mendieta</span></h1>
+        <p class="eyebrow">PORTAFOLIO · DESARROLLO WEB</p>
+        <h1 id="presentacion-titulo">Fabrizio Ortiz Mendieta</h1>
         <h2>Desarrollador Web en formación</h2>
-        <p>
-          Apasionado por la tecnología y la creación de experiencias web funcionales e interactivas. 
-          Actualmente integrando mis conocimientos en HTML, CSS, JavaScript, Git y GitHub en Skillnest.
-        </p>
+        <a class="hero-scroll" href="#habilidades" aria-label="Desplazarse a la sección Acerca de mí">
+          <span>Conoce mi camino</span>
+          <span class="hero-scroll-icon" aria-hidden="true">⌄</span>
+        </a>
       </div>
     </section>
 
     <!-- Tecnologías y Habilidades -->
-    <section id="habilidades" class="section">
+    <section id="habilidades" class="section" aria-labelledby="habilidades-titulo">
       <div class="container">
-        <h2>Tecnologías y Habilidades</h2>
-        <div class="skills-grid">
-          <span class="skill-badge">HTML5</span>
-          <span class="skill-badge">CSS3</span>
-          <span class="skill-badge">JavaScript</span>
-          <span class="skill-badge">Git</span>
-          <span class="skill-badge">GitHub</span>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="eyebrow">ACERCA DE MÍ</p>
+            <h2 id="habilidades-titulo">Aprendiendo, creando y creciendo</h2>
+            <p>Me interesa crear experiencias web claras, accesibles e interactivas. Actualmente estoy en formación en Skillnest y llevo lo aprendido a proyectos propios.</p>
+            <p>Mi portafolio es también un registro de ese camino: un espacio que seguirá creciendo con cada proyecto y tecnología que incorpore.</p>
+          </div>
+          <div class="about-skills">
+            <h3>Tecnologías que estoy desarrollando</h3>
+            <ul class="skills-grid" aria-label="Tecnologías que estoy desarrollando">
+              <li class="skill-badge">HTML5</li>
+              <li class="skill-badge">CSS3</li>
+              <li class="skill-badge">JavaScript</li>
+              <li class="skill-badge">Python</li>
+              <li class="skill-badge">Flask</li>
+              <li class="skill-badge">MySQL</li>
+              <li class="skill-badge">Bootstrap</li>
+              <li class="skill-badge">Git</li>
+              <li class="skill-badge">GitHub</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="section">
+    <section id="proyectos" class="section" aria-labelledby="proyectos-titulo">
       <div class="container">
-        <h2>Mis Proyectos</h2>
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="javascript">JavaScript</button>
-          <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+        <p class="eyebrow section-eyebrow">TRABAJO Y EVOLUCIÓN</p>
+        <h2 id="proyectos-titulo">Proyectos</h2>
+        <div class="filter-buttons" role="group" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" aria-controls="projects-grid">Todos</button>
+          <button class="filter-btn" type="button" data-filter="javascript" aria-pressed="false" aria-controls="projects-grid">JavaScript</button>
+          <button class="filter-btn" type="button" data-filter="html-css" aria-pressed="false" aria-controls="projects-grid">HTML/CSS</button>
         </div>
-        <div class="projects-grid">
-          <article class="project-card" data-category="javascript">
-            <img src="assets/img/proyecto1.jpg" alt="Captura de Proyecto">
-            <h3>Proyecto Integrador</h3>
-            <p>Aplicación web interactiva desarrollada con HTML, CSS y JavaScript.</p>
-            <div class="tags">
-              <span>HTML</span> <span>CSS</span> <span>JS</span>
+        <p class="filter-status" id="filter-status" aria-live="polite"></p>
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card" data-category="javascript html-css">
+            <div class="project-visual" role="img" aria-label="Ilustración de una ventana de código para un proyecto web">
+              <div class="code-window" aria-hidden="true">
+                <div class="code-window-bar"><span></span><span></span><span></span><b>proyecto-web</b></div>
+                <div class="code-lines">
+                  <span><i>01</i><b>&lt;main&gt;</b></span>
+                  <span><i>02</i>&nbsp;&nbsp;&lt;h1&gt;<em>Mi proyecto</em>&lt;/h1&gt;</span>
+                  <span><i>03</i>&nbsp;&nbsp;&lt;script&gt;<strong>interactivo()</strong>&lt;/script&gt;</span>
+                  <span><i>04</i><b>&lt;/main&gt;</b></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">PROYECTO INTEGRADOR</p>
+              <h3>Proyecto integrador</h3>
+              <p>Aplicación web interactiva desarrollada durante mi formación con HTML, CSS y JavaScript.</p>
+              <ul class="tags" aria-label="Tecnologías utilizadas">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
             </div>
             <div class="card-links">
-              <a href="https://fabrizio226.github.io/portafolio/" target="_blank">Ver Demo</a>
-              <a href="https://github.com/Fabrizio226/portafolio" target="_blank">Ver Código</a>
+              <a href="https://fabrizio226.github.io/portafolio/" target="_blank" rel="noopener noreferrer">Ver demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/Fabrizio226/portafolio" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="javascript html-css">
+            <div class="project-visual project-visual-portfolio" role="img" aria-label="Vista ilustrada de este portafolio en escritorio y móvil">
+              <div class="portfolio-preview" aria-hidden="true">
+                <div class="portfolio-preview-top"><span></span><span></span><span></span></div>
+                <div class="portfolio-preview-content">
+                  <i>PORTAFOLIO</i>
+                  <b>Fabrizio Ortiz</b>
+                  <span>Desarrollo web en formación</span>
+                  <div><em></em><em></em><em></em></div>
+                </div>
+              </div>
+              <div class="portfolio-phone" aria-hidden="true"><span></span><b>F</b><i></i><i></i></div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">PROYECTO PERSONAL</p>
+              <h3>Portafolio de desarrollador</h3>
+              <p>Mi espacio profesional para presentar mi perfil, las tecnologías que estoy aprendiendo y los proyectos que voy construyendo.</p>
+              <ul class="tags" aria-label="Tecnologías utilizadas">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+              </ul>
+            </div>
+            <div class="card-links">
+              <a href="https://fabrizio226.github.io/Portafolio_Desarrollador_FullStack/" target="_blank" rel="noopener noreferrer">Ver demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/Fabrizio226/Portafolio_Desarrollador_FullStack" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
@@ -86,35 +145,51 @@
     </section>
 
     <!-- Sección de Video -->
-    <section id="video-sec" class="section">
+    <section id="video-sec" class="section" aria-labelledby="video-titulo">
       <div class="container">
-        <h2>Presentación en Video</h2>
-        <div class="video-container">
-          <video controls poster="assets/img/video-poster.jpg">
-            <source src="assets/video/presentacion.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de video.
-          </video>
+        <p class="eyebrow section-eyebrow">UN POCO MÁS SOBRE MÍ</p>
+        <h2 id="video-titulo">Presentación en video</h2>
+        <div class="video-pending">
+          <span class="video-pending-icon" aria-hidden="true">▶</span>
+          <p>Próximamente: una breve presentación sobre mí y mi proceso de aprendizaje.</p>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Pie de página y Contacto -->
-  <footer id="contacto">
+  <footer id="contacto" aria-labelledby="contacto-titulo">
     <div class="container">
-      <h2>¡Hablemos!</h2>
-      <p>Puedes contactarme directamente a través de mi correo profesional:</p>
-      <a href="mailto:fabrizioortizmendieta6@gmail.com" class="contact-link">📧 fabrizioortizmendieta6@gmail.com</a>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Fabrizio226" target="_blank" rel="noopener">GitHub</a>
-      </div>
+      <p class="eyebrow section-eyebrow">CONTACTO</p>
+      <h2 id="contacto-titulo">¿Hablamos?</h2>
+      <p>Estoy abierto a conversar sobre oportunidades, proyectos y desarrollo web.</p>
+      <ul class="contact-list" aria-label="Formas de contacto">
+        <li>
+          <a href="mailto:fabrizioortizmendieta6@gmail.com" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="m3 6 9 7 9-7"/></svg>
+            <span class="contact-details"><span class="contact-label">Correo</span><span class="contact-username">fabrizioortizmendieta6@gmail.com</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://cl.linkedin.com/in/fabrizio-ortiz-mendieta-5995a53b9" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10"/><path d="M5 5v.01"/><path d="M9 19v-6a4 4 0 0 1 8 0v6"/><path d="M9 10v9"/><path d="M3 3h18v18H3z"/></svg>
+            <span class="contact-details"><span class="contact-label">LinkedIn</span><span class="contact-username">Fabrizio Ortiz Mendieta</span></span>
+            <span class="contact-external" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Fabrizio226" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3"/><path d="M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18.5 6a4.3 4.3 0 0 0-.1-3S17.4 2.7 15 4a13 13 0 0 0-6 0C6.6 2.7 5.6 3 5.6 3A4.3 4.3 0 0 0 5.5 6 4.7 4.7 0 0 0 4.3 9.2c0 4.7 2.8 5.7 5.5 6A3 3 0 0 0 9 17.5V21"/></svg>
+            <span class="contact-details"><span class="contact-label">GitHub</span><span class="contact-username">Fabrizio226</span></span>
+            <span class="contact-external" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
       <p class="copyright">&copy; 2026 - Creado por Fabrizio Ortiz Mendieta</p>
     </div>
   </footer>
 
   <!-- Scripts de JavaScript -->
-  <script src="js/tema.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

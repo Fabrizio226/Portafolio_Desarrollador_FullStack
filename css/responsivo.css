@@ -27,11 +27,17 @@
   }
 
   #sobre-mi h1 {
-    font-size: 2rem;
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
   }
 
   #sobre-mi h2 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  #sobre-mi::after {
+    left: 50%;
+    right: auto;
+    opacity: 0.55;
   }
 
   .filter-buttons {
@@ -40,6 +46,10 @@
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    background-color: rgba(11, 16, 32, 0.98);
   }
 }
 

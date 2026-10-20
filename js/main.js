@@ -5,43 +5,63 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-menu a');
 
   if (navToggle && navMenu) {
-    // Abrir/cerrar menú al hacer clic en el botón hamburguesa
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+    };
+
     navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     });
 
-    // Cerrar el menú automáticamente al hacer clic en un enlace de navegación
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+        navToggle.focus();
+      }
     });
   }
 
   // --- 2. FILTRADO DINÁMICO DE PROYECTOS ---
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const filterStatus = document.getElementById('filter-status');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      // Remover la clase active de todos los botones
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      // Agregar la clase active al botón presionado
-      button.classList.add('active');
+      const filterValue = button.dataset.filter;
+      let visibleCount = 0;
 
-      const filterValue = button.getAttribute('data-filter');
+      filterButtons.forEach(filterButton => {
+        const isActive = filterButton === button;
+        filterButton.classList.toggle('active', isActive);
+        filterButton.setAttribute('aria-pressed', String(isActive));
+      });
 
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-
-        if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        const categories = (card.dataset.category || '').split(/\s+/);
+        const isVisible = filterValue === 'all' || categories.includes(filterValue);
+        card.hidden = !isVisible;
+        visibleCount += Number(isVisible);
       });
+
+      if (filterStatus) {
+        filterStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'proyecto visible' : 'proyectos visibles'}`;
+      }
     });
   });
+
+  const initialFilter = document.querySelector('.filter-btn.active');
+  if (initialFilter) {
+    initialFilter.click();
+  }
 });
