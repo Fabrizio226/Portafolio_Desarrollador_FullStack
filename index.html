@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Fabrizio Ortiz Mendieta</title>
-  <meta name="description" content="Portafolio de Fabrizio Ortiz Mendieta, desarrollador web en formación. Conoce sus habilidades y proyectos en HTML, CSS y JavaScript.">
-  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Portafolio de Fabrizio Ortiz Mendieta, desarrollador fullstack en formación. Conoce sus habilidades en frontend, backend y bases de datos.">
+  <meta name="theme-color" content="#070a12">
   
   <!-- Hojas de estilo CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -39,10 +39,10 @@
     <!-- Presentación Personal -->
     <section id="sobre-mi" class="section" aria-labelledby="presentacion-titulo">
       <div class="container">
-        <p class="eyebrow">PORTAFOLIO · DESARROLLO WEB</p>
+        <p class="eyebrow">PORTAFOLIO · DESARROLLO FULLSTACK</p>
         <h1 id="presentacion-titulo"><span class="highlight">Fabrizio Ortiz Mendieta</span></h1>
-        <h2>Desarrollador Web en formación</h2>
-        <p class="hero-intro">Construyo experiencias web funcionales, cuidadas y accesibles.</p>
+        <h2>Desarrollador Fullstack en formación</h2>
+        <p class="hero-intro">Del diseño de interfaces al desarrollo de lógica de servidor y bases de datos: sigo aprendiendo a construir experiencias web completas.</p>
         <a class="hero-scroll" href="#habilidades" aria-label="Desplazarse a la sección Acerca de mí">
           <span>Conoce mi camino</span>
           <span class="hero-scroll-icon" aria-hidden="true">⌄</span>
@@ -56,23 +56,38 @@
         <div class="about-grid">
           <div class="about-copy">
             <p class="eyebrow">ACERCA DE MÍ</p>
-            <h2 id="habilidades-titulo">Aprendiendo, creando y creciendo</h2>
-            <p>Me interesa crear experiencias web claras, accesibles e interactivas. Actualmente estoy en formación en Skillnest y llevo lo aprendido a proyectos propios.</p>
-            <p>Mi portafolio es también un registro de ese camino: un espacio que seguirá creciendo con cada proyecto y tecnología que incorpore.</p>
+            <h2 id="habilidades-titulo">De la interfaz a la lógica del servidor</h2>
+            <p>Estoy formándome en desarrollo fullstack en Skillnest, aprendiendo a conectar interfaces web con lógica de servidor y bases de datos.</p>
+            <p>En mi recorrido estoy desarrollando habilidades de frontend y backend con HTML, CSS, JavaScript, Python, Flask y MySQL. Mi portafolio irá creciendo junto con los proyectos que construya.</p>
           </div>
           <div class="about-skills">
-            <h3>Tecnologías que estoy desarrollando</h3>
-            <ul class="skills-grid" aria-label="Tecnologías que estoy desarrollando">
-              <li class="skill-badge">HTML5</li>
-              <li class="skill-badge">CSS3</li>
-              <li class="skill-badge">JavaScript</li>
-              <li class="skill-badge">Python</li>
-              <li class="skill-badge">Flask</li>
-              <li class="skill-badge">MySQL</li>
-              <li class="skill-badge">Bootstrap</li>
-              <li class="skill-badge">Git</li>
-              <li class="skill-badge">GitHub</li>
-            </ul>
+            <h3>Stack en desarrollo</h3>
+            <div class="skills-groups">
+              <div class="skill-group">
+                <h4>Frontend</h4>
+                <ul class="skills-grid" aria-label="Tecnologías frontend">
+                  <li class="skill-badge">HTML5</li>
+                  <li class="skill-badge">CSS3</li>
+                  <li class="skill-badge">JavaScript</li>
+                  <li class="skill-badge">Bootstrap</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h4>Backend y datos</h4>
+                <ul class="skills-grid" aria-label="Tecnologías backend y bases de datos">
+                  <li class="skill-badge">Python</li>
+                  <li class="skill-badge">Flask</li>
+                  <li class="skill-badge">MySQL</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h4>Herramientas</h4>
+                <ul class="skills-grid" aria-label="Herramientas de desarrollo">
+                  <li class="skill-badge">Git</li>
+                  <li class="skill-badge">GitHub</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -128,6 +143,7 @@
           <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" aria-controls="projects-grid">Todos</button>
           <button class="filter-btn" type="button" data-filter="javascript" aria-pressed="false" aria-controls="projects-grid">JavaScript</button>
           <button class="filter-btn" type="button" data-filter="html-css" aria-pressed="false" aria-controls="projects-grid">HTML/CSS</button>
+          <button class="filter-btn" type="button" data-filter="python" aria-pressed="false" aria-controls="projects-grid">Python / Flask</button>
         </div>
         <p class="filter-status" id="filter-status" aria-live="polite"></p>
         <div class="projects-grid" id="projects-grid">
@@ -181,6 +197,71 @@
             <div class="card-links">
               <a href="https://fabrizio226.github.io/Portafolio_Desarrollador_FullStack/" target="_blank" rel="noopener noreferrer">Ver demo <span aria-hidden="true">↗</span></a>
               <a href="https://github.com/Fabrizio226/Portafolio_Desarrollador_FullStack" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="python flask mysql">
+            <div class="project-visual project-visual-cinepedia" role="img" aria-label="Ilustración de una colección de películas">
+              <div class="cinepedia-preview" aria-hidden="true">
+                <p>CINEPEDIA <span>PELÍCULAS · COMUNIDAD</span></p>
+                <div class="movie-posters"><i></i><i></i><i></i></div>
+                <b>Historias para compartir</b>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">APLICACIÓN WEB · CERTIFICACIÓN</p>
+              <h3>CinePedia</h3>
+              <p>Aplicación para crear una cuenta, publicar películas, consultar sus detalles y conversar mediante comentarios de la comunidad.</p>
+              <ul class="tags" aria-label="Tecnologías utilizadas">
+                <li>Python</li><li>Flask</li><li>MySQL</li><li>Bootstrap</li>
+              </ul>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Fabrizio226/Examen_de_certificacion_Skillnest" target="_blank" rel="noopener noreferrer">Repositorio privado <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="python flask mysql">
+            <div class="project-visual project-visual-bookhub" role="img" aria-label="Ilustración de una biblioteca digital con libros">
+              <div class="bookhub-preview" aria-hidden="true">
+                <p>BOOKHUB <span>TU ESPACIO DE LECTURA</span></p>
+                <div class="bookhub-books"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="bookhub-caption"><b>Mi biblioteca</b><span>CATÁLOGO · COMUNIDAD · FAVORITOS</span></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">BIBLIOTECA Y COMUNIDAD</p>
+              <h3>BookHub</h3>
+              <p>Aplicación para organizar libros propios, explorar los que comparte la comunidad y guardar títulos favoritos.</p>
+              <ul class="tags" aria-label="Tecnologías utilizadas">
+                <li>Python</li><li>Flask</li><li>MySQL</li><li>Bootstrap</li>
+              </ul>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Fabrizio226/Trabajos-extras/tree/main/Simular_1/simulacion_1" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="python flask mysql">
+            <div class="project-visual project-visual-tasktrack" role="img" aria-label="Ilustración de un panel de tareas y progreso">
+              <div class="tasktrack-preview" aria-hidden="true">
+                <header><b>TaskTrack</b><span>MI ESPACIO DE TRABAJO</span></header>
+                <div class="tasktrack-progress"><i></i></div>
+                <p><i class="task-check"></i> Organizar prioridades</p>
+                <p><i></i> Revisar próximas tareas</p>
+                <p><i></i> Actualizar categorías</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">ORGANIZACIÓN PERSONAL</p>
+              <h3>TaskTrack</h3>
+              <p>Gestor de tareas con categorías, prioridades, fechas límite y seguimiento de estados desde un panel personal.</p>
+              <ul class="tags" aria-label="Tecnologías utilizadas">
+                <li>Python</li><li>Flask</li><li>MySQL</li><li>Bootstrap</li>
+              </ul>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Fabrizio226/Trabajos-extras/tree/main/Simular_2/Simular_2" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>

@@ -10,6 +10,9 @@ Portafolio personal creado con HTML, CSS y JavaScript para presentar mi perfil c
 ## Proyectos destacados
 
 - **Portafolio de desarrollador**: sitio personal responsivo con HTML, CSS y JavaScript.
+- **CinePedia**: aplicación Flask para publicar películas y compartir comentarios, con MySQL.
+- **BookHub**: biblioteca digital con catálogo personal, exploración comunitaria y favoritos, construida con Flask y MySQL.
+- **TaskTrack**: gestor de tareas con categorías, prioridades y fechas límite, construido con Flask y MySQL.
 
 ## Desarrollo local
 
